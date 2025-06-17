@@ -5,7 +5,7 @@ This guide provides instructions on how to set up the environment and run the co
 ---
 
 ## Google Drive Links
-
+* **Github:"" [https://github.com/quangbmk66dsai02/RAG_thesis_code/tree/main]
 * **All Codes:** [https://drive.google.com/drive/folders/1JWLuyV2p-6ZI5JvBlB3vj3WjxyDX_J4f?usp=drive_link](https://drive.google.com/drive/folders/1JWLuyV2p-6ZI5JvBlB3vj3WjxyDX_J4f?usp=drive_link)
 * **All Data and Models:** [https://drive.google.com/drive/folders/1OBDcXtOMnlYIwZXZIGlpHR8fg1bHPyUd?usp=drive_link](https://drive.google.com/drive/folders/1OBDcXtOMnlYIwZXZIGlpHR8fg1bHPyUd?usp=drive_link)
 
