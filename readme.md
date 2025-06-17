@@ -1,6 +1,6 @@
 # Instructions for Running Code from "Retrieval-Augmented Generation System for Question-Answering Vietnamese History"
 
-This guide provides instructions on how to set up the environment and run the code from the thesis "Retrieval-Augmented Generation System for Question-Answering Vietnamese History." All necessary code, data, and models are provided via Google Drive links.
+This guide provides instructions on how to set up the environment and run the code from the thesis "Retrieval-Augmented Generation System for Question-Answering Vietnamese History." All necessary code, data, and models are provided via Google Drive links. If you have trouble installing the code, please contact: quang.bm214925@sis.hust.edu.vn
 
 ---
 
