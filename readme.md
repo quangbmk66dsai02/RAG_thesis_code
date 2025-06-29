@@ -122,6 +122,6 @@ Now you can run the main RAG scripts:
 * **Decomposition Version (BGE-M3 as Retriever, GPT-4o for Decomposition, GPT-4o for Answering):** Run `gpt_decompose.py`. This uses GPT-4o to decompose complex queries and answer them.
 * **Decomposition Version (BGE-M3 as Retriever, GPT-4o for Decomposition, Llama 3.2 3B for Answering):** Run `llama_decompose.py`. This uses GPT-4o for decomposition and Llama 3.2 3B for answering complex queries.
 
-Alternatively, UI versions with Gradio for a more friendly UI are provided in `additional_UI` subfolder in code folders, download the scripts corresponding to what you want to test. After you download all scripts, put them directly into `combined` folder, e.g. `combined\app_gpt_decompose.py`, and run them normally.
+Alternatively, UI versions with Gradio for a more friendly UI are provided in `additional_UI` folder in "All codes" link, download the scripts corresponding to what you want to test. After you download these scripts, put them directly into `combined` folder, e.g. `combined\app_gpt_decompose.py`, and run them normally.
 
 ---
