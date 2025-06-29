@@ -3,6 +3,7 @@
 This guide provides instructions on how to set up the environment and run the code from the thesis "Retrieval-Augmented Generation System for Question-Answering Vietnamese History." All necessary code, data, and models are provided via Google Drive links. In any conflict case, please use the code from "All codes" link provided below. If you have trouble installing the code, please contact: quang.bm214925@sis.hust.edu.vn.
 
 Generally codes with Llama 3.2 3B will require computers with resources and compatible CUDA support, though it is possible to run on CPU but not guaranteed. It is recommended to run these codes on server with GPU supports, such as vast, runpod, etc.
+
 API keys are needed to run most of the codes, only BGE-M3 model in this framework does not require any key to access. OpenAI API is easy to set up and cost little per request, and API for Llama 3.2 3B public models can be requested from the official `meta-llama/Llama-3.2-3B` Huggingface repository.
 
 ---
