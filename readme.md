@@ -1,11 +1,10 @@
 # Instructions for Running Code from "Retrieval-Augmented Generation System for Question-Answering Vietnamese History"
 
-This guide provides instructions on how to set up the environment and run the code from the thesis "Retrieval-Augmented Generation System for Question-Answering Vietnamese History." All necessary code, data, and models are provided via Google Drive links. If you have trouble installing the code, please contact: quang.bm214925@sis.hust.edu.vn
+This guide provides instructions on how to set up the environment and run the code from the thesis "Retrieval-Augmented Generation System for Question-Answering Vietnamese History." All necessary code, data, and models are provided via Google Drive links. In any conflict case, please use the code from "All codes" link provided below. If you have trouble installing the code, please contact: quang.bm214925@sis.hust.edu.vn
 
 ---
 
 ## Google Drive Links
-* **Github:** [https://github.com/quangbmk66dsai02/RAG_thesis_code/tree/main]
 * **All Codes:** [https://drive.google.com/drive/folders/1JWLuyV2p-6ZI5JvBlB3vj3WjxyDX_J4f?usp=drive_link](https://drive.google.com/drive/folders/1JWLuyV2p-6ZI5JvBlB3vj3WjxyDX_J4f?usp=drive_link)
 * **All Data and Models:** [https://drive.google.com/drive/folders/1OBDcXtOMnlYIwZXZIGlpHR8fg1bHPyUd?usp=drive_link](https://drive.google.com/drive/folders/1OBDcXtOMnlYIwZXZIGlpHR8fg1bHPyUd?usp=drive_link)
 
@@ -73,14 +72,14 @@ Navigate to the `chatbot_phobert` folder (downloaded from the "All Codes" link).
 
 ---
 
-### Alternative: Using Pre-trained Models for Testing
+### Alternative: Using Pre-trained Retrievers for Testing
 
 If you prefer not to re-fine-tune the BGEM3 and PhoBERT models, you can download the pre-trained versions:
 
 * **Fine-tuned PhoBERT:** From the "Data and Models" link, navigate to `models/phobert` and download `fine-tuned-phobert-sentence-transformer`. Place this folder in your `chatbot_phobert` directory.
 * **Fine-tuned BGEM3:** From the "Data and Models" link, navigate to `models/BGEM3` and download `fine-tuned-sentence-transformer`. Place this folder in your `chatbot_bgem3_data` directory.
 
-After placing the pre-trained models, you can proceed with running the respective testing files in their `experiment_test` subfolders.
+After placing the pre-trained models, you can proceed with running the respective testing files in their `experiment_test` subfolders. Note that you still need to to have `database_building` subfolder as mentioned in the testing section.
 
 ---
 
@@ -96,13 +95,13 @@ Navigate to the `finetune_llama` folder (downloaded from the "All Codes" link).
 2.  Then, run `llama_finetune_additional.py`.
     *(Other files in these folders are for data preparation and additional tokenizer/model testing and are not strictly necessary for basic fine-tuning.)*
 
-### To Test
+### To Test (No fine-tuning needed).
+Note that since this folder does not contain codes to run BGE-M3, each test data consists of both the question and returned passages performed previously by BGE-M3. In other words, testing in this folder is offline, users choose an index from the list of questions with their corresponding passages to test Llama 3.2 3B only, not the whole framework.
 
 1.  From the "Data and Models" link, navigate to `models/Llama` and download the `lora-adapter` and `lora-adapter2` folders.
 2.  Place these two folders directly into your `finetune_llama` folder.
-3.  Run `finetuned_test_additional.py` for model testing.
-4.  Check the `experiment_test` subfolder for comparisons with GPT-4o results.
-
+3.  Run `finetuned_test_additional.py` for model testing. 
+4.  Check the `experiment_test` subfolder for comparisons with GPT-4o results. If you need to re-run to get GPT's answers, do it in `gpt-4o-test.py`, if you need compare GPT's answers and Llama 3.2's answers, please run `APItest_llama_gpt.py`, once you get the results, please run `statistic_reader.py` to read the results from json file. Note that there are already 2 json files there, one is for the result in the thesis report, the other, conducted recently with some adjustments, is for the result in the slide.
 ---
 
 ## 5. Combined Main RAG Framework
@@ -115,8 +114,9 @@ Navigate to the `combined` folder (downloaded from the "All Codes" link).
 
 Now you can run the main RAG scripts:
 
-* **Simple RAG Approach:** Run `main.py`.
-* **Decomposition Version (GPT-4o for Decomposition, GPT-4o for Answering):** Run `gpt_decompose.py`. This uses GPT-4o to decompose complex queries and answer them.
-* **Decomposition Version (GPT-4o for Decomposition, Llama 3.2 3B for Answering):** Run `llama_decompose.py`. This uses GPT-4o for decomposition and Llama 3.2 3B for answering complex queries.
+* **Simple RAG Approach (BGE-M3 as Retriever and Llama 3.2 3B):** Run `main.py`.
+* **Decomposition Version (BGE-M3 as Retriever, GPT-4o for Decomposition, GPT-4o for Answering):** Run `gpt_decompose.py`. This uses GPT-4o to decompose complex queries and answer them.
+* **Decomposition Version (BGE-M3 as Retriever, GPT-4o for Decomposition, Llama 3.2 3B for Answering):** Run `llama_decompose.py`. This uses GPT-4o for decomposition and Llama 3.2 3B for answering complex queries.
 
+Alternatively, UI versions with Gradio for a more friendly UI are provided in `additional_UI` subfolder in code folders, download the scripts corresponding to what you want to test. After you download all scripts, put them directly into `combined` folder, e.g. `combined\app_gpt_decompose.py`, and run them normally.
 ---
